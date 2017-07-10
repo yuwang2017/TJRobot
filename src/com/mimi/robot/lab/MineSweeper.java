@@ -49,7 +49,7 @@ public class MineSweeper {
 	
 	public static void mine() {
 		
-		Robot miner = new Robot(4, 4, Display.EAST, 25);
+		Robot miner = new Robot(4, 4, Display.EAST, 30);
 		
 		while(miner.hasBeepers()) {
 			

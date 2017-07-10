@@ -41,13 +41,15 @@ public class MineSweeper {
 			}
 			RobotUtil.turnToDirection(sapper, Display.NORTH);
 			sapper.move();
+			x = sapper.getX();
+			y = sapper.getY();
 		}
 		
 	}
 	
 	public static void mine() {
 		
-		Robot miner = new Robot(4, 4, Display.EAST, 20);
+		Robot miner = new Robot(4, 4, Display.EAST, 25);
 		
 		while(miner.hasBeepers()) {
 			
@@ -60,6 +62,9 @@ public class MineSweeper {
 				}
 			} else {
 				RobotUtil.turnToDirection(miner, RobotUtil.getRandomDirection());
+				if(RobotUtil.isValidMove(miner)) {
+					miner.move();
+				}
 			}			
 		}
 		

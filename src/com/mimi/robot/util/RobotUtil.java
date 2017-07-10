@@ -1,30 +1,9 @@
+package com.mimi.robot.util;
+
 import edu.fcps.karel2.Display;
 import edu.fcps.karel2.Robot;
 
-/*
- * Random Wandering on the 10 X 10 map. 
- * The robot move randomly and won't hit 
- * the wall of out of the 10X10 grid
- * 
- */
-public class WanderingSpider {
-
-	public static void main(String[] args) {
-		
-		//Create a robot.
-		Robot spider = new Robot();
-		
-		while(true) {
-			
-			//Check if next move is valid
-			if(isValidMove(spider)) {
-				spider.move();
-				turnToDirection(spider, getRandomDirection());
-			} else {
-				turnToDirection(spider, getRandomDirection());
-			}			
-		}
-	}
+public class RobotUtil {
 	
 	public static void turnToDirection(Robot robot, int direction) {
 		while(robot.getDirection()!=direction) {
@@ -96,4 +75,5 @@ public class WanderingSpider {
 
 		return d;			
 	}
+
 }

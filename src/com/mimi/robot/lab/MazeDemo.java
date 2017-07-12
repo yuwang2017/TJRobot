@@ -6,8 +6,8 @@ import edu.fcps.karel2.Robot;
 public class MazeDemo {
 
 	public static void main(String[] args) {
-		Display.openWorld("maps/maze1.map");
-		Robot mouse = new Robot(1, 1, Display.EAST, 0);
+		Display.openWorld("maps/maze5.map");
+		Robot mouse = new Robot(1, 1, Display.NORTH, 0);
 		
 		//This mouse will try to found a beeper
 		int backward = Display.WEST;

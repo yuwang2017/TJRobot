@@ -1,10 +1,14 @@
 package com.mimi.robot.lab.maze;
 
+import java.util.HashMap;
+
 import edu.fcps.karel2.Display;
 import edu.fcps.karel2.Robot;
 
 public class MazeDemo {
-
+	
+	static HashMap<String, MazePoint> points = new HashMap<String, MazePoint>();
+	
 	public static void main(String[] args) {
 		Display.openWorld("maps/maze1.map");
 		Robot mouse = new Robot(1, 1, Display.EAST, 0);
@@ -15,7 +19,12 @@ public class MazeDemo {
 			if(mouse.nextToABeeper()) {
 				mouse.pickBeeper();
 			}
-			//Start probe 
+			//Start probe, the logic is, 
+			//At any given point, robot survey its
+			//surroundings and memorize it, 
+			
+			
+			
 			if(mouse.frontIsClear()) {
 				if(backward != mouse.getDirection()) {
 					mouse.move();
@@ -27,6 +36,9 @@ public class MazeDemo {
 		}
 
 	}
+	
+	public
+	
 	
 	public static int getBackwardDirection(int d) {
 		switch(d) {

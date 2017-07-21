@@ -1,4 +1,4 @@
-package com.mimi.robot.lab;
+package com.mimi.robot.lab.maze;
 
 import edu.fcps.karel2.Display;
 import edu.fcps.karel2.Robot;

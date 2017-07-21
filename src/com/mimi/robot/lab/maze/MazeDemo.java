@@ -22,7 +22,12 @@ public class MazeDemo {
 			//Start probe, the logic is, 
 			//At any given point, robot survey its
 			//surroundings and memorize it, 
-			
+			MazePoint p = points.get(getKey(mouse));
+			if(points.get(p.getKey()) == null) {
+				p = new MazePoint(mouse.getX(), mouse.getY());
+				survey(mouse, p);
+				points.put(p.getKey(), p);
+			}
 			
 			
 			if(mouse.frontIsClear()) {
@@ -37,7 +42,17 @@ public class MazeDemo {
 
 	}
 	
-	public
+	public static String getKey(Robot r) {
+		return "" + r.getX() + "-" + r.getY();
+	}
+	
+	/*
+	 * At a point, the robot scan its surroundings and pick a 
+	 * direction to move
+	 */
+	public static void survey(Robot robot, MazePoint p) {
+		
+	}
 	
 	
 	public static int getBackwardDirection(int d) {
